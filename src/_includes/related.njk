@@ -1,0 +1,12 @@
+<aside>
+{% if items.length != 0 %}
+  <h1 data-tags="{{ tags }}" data-count="{{ count }}">Related</h1>
+  <ul>
+  {% asyncEach item in items %}
+    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+  {% endeach %}
+  </ul>
+{% else %}
+  <!-- No related content found for "{{ tags }}". -->
+{% endif %}
+</aside>

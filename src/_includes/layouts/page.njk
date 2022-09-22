@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+ignoreTags:
+  - electric
+  - gasoline
+  - hybrid
+  - recharge
+  - volvo
+---
+
+<main>{{ content | safe }}</main>
+
+{%- set filteredTags = tags | filter_arr(ignoreTags) -%}
+{%- related collections.cars, filteredTags, page.url -%}
